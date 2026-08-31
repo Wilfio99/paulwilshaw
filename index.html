@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul Wilshaw - Learning Disabled Creative Connector. Portfolio showcasing creative services, workshops, and collaboration opportunities.">
     <title>Paul Wilshaw - Learning Disabled Creative Connector</title>
     <style>
         * {
@@ -11,35 +12,62 @@
             box-sizing: border-box;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fafafa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        /* Skip to main content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a1a1a;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        
+        .skip-link:focus {
+            top: 0;
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #1a1a1a;
+            color: #ffffff;
             padding: 60px 20px;
             text-align: center;
         }
         
         header h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
         
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        header .role {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         
         header .tagline {
-            font-size: 1em;
+            font-size: 1.1em;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        header .location {
+            font-size: 1.05em;
             margin-top: 15px;
-            font-style: italic;
-            opacity: 0.85;
+            opacity: 0.95;
         }
         
         .container {
@@ -49,35 +77,68 @@
         }
         
         section {
-            background: white;
-            margin-bottom: 30px;
+            background: #ffffff;
+            margin-bottom: 40px;
             padding: 40px;
+            border: 2px solid #1a1a1a;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
+            color: #1a1a1a;
+            margin-bottom: 25px;
             font-size: 2em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #1a1a1a;
+            padding-bottom: 15px;
+            font-weight: 700;
         }
         
         section h3 {
-            color: #764ba2;
-            margin-top: 25px;
+            color: #333333;
+            margin-top: 30px;
             margin-bottom: 15px;
             font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        section h4 {
+            color: #333333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
         }
         
         .intro-text {
             font-size: 1.1em;
-            color: #555;
-            margin-bottom: 15px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
         
+        /* Profile picture section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .profile-picture {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            border: 3px solid #1a1a1a;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-text {
+            flex: 1;
+        }
+        
+        /* Services grid */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -86,68 +147,84 @@
         }
         
         .service-card {
-            background: #f8f9fa;
-            padding: 25px;
+            background: #f5f5f5;
+            padding: 30px;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease;
+            border-left: 5px solid #1a1a1a;
+            border: 2px solid #333333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .service-card:hover {
+        .service-card:hover,
+        .service-card:focus-within {
             transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         
         .service-icon {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 15px;
         }
         
         .service-card h4 {
-            color: #667eea;
-            margin-bottom: 10px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
             font-size: 1.3em;
         }
         
+        .service-card p {
+            color: #333333;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        
+        /* Workshop structure */
         .workshop-structure {
-            background: #f0f4ff;
-            padding: 20px;
+            background: #f5f5f5;
+            padding: 30px;
             border-radius: 8px;
             margin-top: 20px;
+            border: 2px solid #333333;
         }
         
         .workshop-structure ol {
-            margin-left: 20px;
+            margin-left: 25px;
         }
         
         .workshop-structure li {
-            margin-bottom: 10px;
-            color: #555;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-size: 1.05em;
+            line-height: 1.6;
         }
         
+        /* Fees table */
         .fees-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            border: 2px solid #1a1a1a;
         }
         
         .fees-table th,
         .fees-table td {
-            padding: 15px;
+            padding: 18px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 1.05em;
         }
         
         .fees-table th {
-            background: #667eea;
-            color: white;
-            font-weight: 600;
+            background: #1a1a1a;
+            color: #ffffff;
+            font-weight: 700;
         }
         
         .fees-table tr:hover {
-            background: #f8f9fa;
+            background: #f5f5f5;
         }
         
+        /* Partners section */
         .partners {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -156,42 +233,56 @@
         }
         
         .partner-logo {
-            background: #f8f9fa;
-            padding: 20px;
+            background: #f5f5f5;
+            padding: 25px;
             border-radius: 8px;
             text-align: center;
             font-weight: 600;
-            color: #667eea;
-            border: 2px solid #e9ecef;
+            color: #1a1a1a;
+            border: 2px solid #333333;
+            font-size: 1.05em;
         }
         
+        /* Contact section */
         .contact-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #1a1a1a;
+            color: #ffffff;
             text-align: center;
         }
         
         .contact-section h2 {
-            color: white;
-            border-bottom-color: white;
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+        
+        .contact-section .intro-text {
+            color: #ffffff;
+            font-size: 1.1em;
         }
         
         .email-link {
             display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 15px 30px;
+            background: #ffffff;
+            color: #1a1a1a;
+            padding: 18px 40px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
+            font-weight: 700;
+            margin-top: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1em;
+            border: 2px solid #ffffff;
         }
         
-        .email-link:hover {
-            transform: scale(1.05);
+        .email-link:hover,
+        .email-link:focus {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+            outline: 3px solid #ffffff;
+            outline-offset: 2px;
         }
         
+        /* Collaboration list */
         .collaboration-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -200,58 +291,108 @@
         }
         
         .collaboration-item {
-            background: #f8f9fa;
-            padding: 15px;
+            background: #f5f5f5;
+            padding: 18px;
             border-radius: 8px;
             text-align: center;
-            color: #667eea;
+            color: #1a1a1a;
             font-weight: 600;
-            border: 2px solid #e9ecef;
+            border: 2px solid #333333;
+            font-size: 1.05em;
         }
         
+        /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
+            background: #1a1a1a;
+            color: #ffffff;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             margin-top: 50px;
+            border-top: 3px solid #333333;
         }
         
         footer p {
-            opacity: 0.9;
+            opacity: 0.95;
+            font-size: 1em;
         }
         
+        /* Focus styles for keyboard navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #1a1a1a;
+            outline-offset: 2px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+            }
+            
+            header .role {
+                font-size: 1.3em;
             }
             
             section {
                 padding: 25px;
+                margin-bottom: 30px;
             }
             
             section h2 {
-                font-size: 1.5em;
+                font-size: 1.6em;
+            }
+            
+            .profile-picture {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            section {
+                page-break-inside: avoid;
             }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
     <header>
         <h1>Paul Wilshaw</h1>
-        <p>Learning Disabled Creative Connector</p>
+        <p class="role">Learning Disabled Creative Connector</p>
         <p class="tagline">Bringing people, ideas and organisations together through creativity, access and lived experience.</p>
-        <p style="margin-top: 20px; font-size: 0.95em;">Based in Bradford & Dorset</p>
+        <p class="location">Based in Bradford & Dorset</p>
     </header>
 
     <div class="container">
         <!-- About Section -->
-        <section>
+        <section id="main-content">
             <h2>About Me</h2>
-            <p class="intro-text"><strong>Connecting people through creativity</strong></p>
             
-            <p class="intro-text">I have over 30 years in the creative sector and 12 years at Mind the Gap — one of the UK's leading learning disability theatre companies. I moved from Wimborne in Dorset to Bradford, and that journey has shaped everything I do.</p>
+            <!-- Profile Picture Placeholder -->
+            <div class="profile-section">
+                <img src="paul-wilshaw.jpg" alt="Paul Wilshaw - Learning Disabled Creative Connector" class="profile-picture">
+                <div class="profile-text">
+                    <h3>Connecting people through creativity</h3>
+                    
+                    <p class="intro-text">I have over 30 years in the creative sector and 12 years at Mind the Gap — one of the UK's leading learning disability theatre companies. I moved from Wimborne in Dorset to Bradford, and that journey has shaped everything I do.</p>
+                </div>
+            </div>
             
             <p class="intro-text">Growing up in Dorset, I trained at Jellico Theatre where I gained my First Diploma in Performing Arts, and performed with Double Act Theatre Company — taking on roles including the Tin Man in The Wizard of Oz and the March Hare in Alice in Wonderland. In 2012 I performed in the Paralympic Closing Ceremony in London and was Assistant Producer for Breathe, the opening ceremony for the sailing events in Weymouth at the 2012 Olympics.</p>
             
@@ -268,31 +409,31 @@
             
             <div class="services">
                 <div class="service-card">
-                    <div class="service-icon">🎤</div>
+                    <div class="service-icon" aria-hidden="true">🎤</div>
                     <h4>MCing & Hosting Events</h4>
                     <p>I am an experienced, warm and adaptable MC who reads the room. From disability arts awards to festivals and community events, I keep things moving and everyone included. I will listen to what you need and make sure you are happy along the way.</p>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">♿</div>
+                    <div class="service-icon" aria-hidden="true">♿</div>
                     <h4>Access Consultancy</h4>
                     <p>I am new to this type of work but have had many years of experience as a learning disabled artist and knowledge of working with major organisations. My first job has been working with Bradford Cultural Voice Forum — working with the organisation to make their meetings and events accessible for disabled people.</p>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🗣️</div>
+                    <div class="service-icon" aria-hidden="true">🗣️</div>
                     <h4>Panel Discussions</h4>
                     <p>I am an experienced panellist on disability arts, anti-ableism, inclusive hiring and learning disability representation. I am available for conferences, festivals and sector events.</p>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🎭</div>
+                    <div class="service-icon" aria-hidden="true">🎭</div>
                     <h4>Workshops</h4>
                     <p>I deliver facilitated workshops for learning disabled, disabled and neurodiverse people — building confidence, voice and creative expression. See my Confidence in Your Voice workshop below.</p>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🎧</div>
+                    <div class="service-icon" aria-hidden="true">🎧</div>
                     <h4>DJ</h4>
                     <p>I DJ with Party People Project and beyond — bringing music, energy and joy to events. I specialise in inclusive sets that get everyone on the floor.</p>
                 </div>
@@ -307,6 +448,7 @@
             <p class="intro-text"><strong>I always have a support person in the room. No experience needed. Just bring yourself.</strong></p>
             
             <div class="workshop-structure">
+                <h4>Workshop Schedule:</h4>
                 <ol>
                     <li><strong>Warm up:</strong> Physical warm-up to get energy going</li>
                     <li><strong>Name Game:</strong> Get to know the group</li>
@@ -325,8 +467,8 @@
             <h3>Stories That Need To Be Told</h3>
             <p class="intro-text">From personal and disability stories to mystery, horror, romance and tragedy — I believe every story deserves to be told.</p>
             
-            <h3 style="margin-top: 30px;">In Development</h3>
-            <h4 style="color: #764ba2; margin-top: 20px; margin-bottom: 15px;">Tap Out Never Submit</h4>
+            <h3>In Development</h3>
+            <h4>Tap Out Never Submit</h4>
             <p><strong>Co-Writer & Performer</strong></p>
             
             <p class="intro-text">Tap Out Never Submit is a brand new radio play. It tells the story of two learning disabled brothers who love wrestling. One brother is living in a care home miles away from his family, where bad things are happening. Wrestling is paramount to the story — it becomes the language of the play, used in place of depicting the abuse directly. Will the brother speak out? What will happen to the family and those closest to them?</p>
